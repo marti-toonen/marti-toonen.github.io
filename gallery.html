@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MARTI TOONEN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="portfolio narrative web design game games visual novel text based interactive story storytelling designer code coder programmer edit editor quality assurance">
+    <meta name="description" content="The portfolio of a programmer and writer.">
+    <link rel="shortcut icon" type="image/png" href="assets/images/interface/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div id="mainGrid">
+        <header>
+            <div id="logo"></div>
+            <div id="social">
+                <a href="https://twitter.com/martimc_fly" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/twitter.png" alt="Twitter" tabindex="1"></a>
+                <a href="https://itch.io" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/itchio.png" alt="Itch.io" tabindex="1"></a>
+                <a href="mailto:martitoonen@gmail.com" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/email.png" alt="Email" tabindex="1"></a>
+            </div>
+        </header>
+        <nav>
+            <a href="index.html" tabindex="1">home</a>
+            <a href="gallery.html" tabindex="1">gallery</a>
+            <a href="resume.html" tabindex="1">resume</a>
+        </nav>
+        <main>
+            <div id="galleryGrid">
+                <!-- Lightboxes -->
+                <div id="hGallery">
+                    <div class="galleryContent">
+                        <div id="hclose" tabindex="1">X</div>
+                        <h1>Hybrid, 2019</h1>
+                        <div class="galleryTextBox">
+                            <p><i>Hybrid</i> is a post-apocalyptic Twine game (using Harlowe) wherein the player is Zed, an enigmatic but friendly stranger whose home has recently gone up in flames and ended their lifelong isolation from regular society.</p>
+                            <p>They finally venture off of their farm and find that since the world ended, civilization has moved on and has become wholly unfamiliar. They have to team up with a camp full of independent drifters in order to figure out who is the shadow behind all their misfortune, and what this villain wants.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_hybrid2.png" alt="Main Menu">
+                        <div class="galleryTextBox">
+                            <p>The trick with the main menu was making it so that the "About" and the "Credits" would expand when clicked, then collapse when clicked again. This is not an inherent ability within the Harlowe language, as many things are not; it requires a workaround wherein clicking the button replaces the text of the button with a new button that has an inverse functionality, and the information that needs to be conveyed.</p>
+                            <p>In the image, you see the "About" expanded to hide the "Credits", but on load both start off collapsed and separated from the "New Game" and, if a save is available, "Continue" buttons.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_hybrid4.png" alt="GUI">
+                        <div class="galleryTextBox">
+                            <p>Creating a user-interface was one of those things that got easier the more I looked into it. At first I had a block of code I copied and pasted into each Twine passage, before learning about the magic of the "Footer" passage that will display and run at the end of every slide. This became my lower bar with the heart (leading to the stats page) and the leaf (indicating that the game has autosaved).</p>
+                            <p>Besides the interface, once I learned that the footer would also run code inside of it every time, I wrote a few basic blocks that would check and increment stats. This significantly cleaned up each individual passage, allowing me to focus on story content.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_hybrid3.png" alt="Stats Page">
+                        <div class="galleryTextBox">
+                            <p>The stats and displaying said stats are the most complex pieces of code within the game. Since I decided to display stats through visual images rather than readable percentages or simple integers, the issue was raised that I couldn't just infinitely count up; after five images, the page started to look a chaotic.</p>
+                            <p>The solution was to increment the stats based on a threshold. Every time a stat hits three, an array (which acts as the actual stat) increments and the stat reverts to zero. For every object within the array, a sprout icon is displayed. Some decisions will remove/add an entire item from an array, and some will simply reset the count of three or add to it.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="brGallery">
+                    <div class="galleryContent">
+                        <div id="brclose" tabindex="1">X</div>
+                        <h1>Bad Ritual, 2019</h1>
+                        <div class="galleryTextBox">
+                            <p><i>Bad Ritual</i> was originally another Twine (Harlowe) game made to experiment with how to set variables while doing the least amount of disruption to the flow of the story. It was translated to ChoiceScript as an attempt to appeal to a wider audience.</p>
+                            <p>The player is a completely customisable (though non-visual) entity, whose job it is to clean the streets of the demons who have become a dangerous fact of life for the mortals of Sanctum City. Everything changes the night that, through a series of work-related blunders, the player inadvertantly binds a powerful archdemon to their arm and must turn the world upside-down in order to resolve the situation before they lose their job: or worse.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_br1.png" alt="Hair Choice">
+                        <div class="galleryTextBox">
+                            <p>The challenge for me, coming out of a first draft on Twine, was to minimalize the disruption of character choices from the flow of the story; and with ChoiceScript's end-of-passage choices, how to provide the character with a satsifying amount of choices while not extending the page well past what was sensible or parsable.</p>
+                            <p>The choice above is one that had to be edited down significantly. As far as visually building a character goes, I find hair is often one of the main focuses of players. I initially accounted for the length and particular style, but through the eagle-eyed beta testing done by my very patient QA analyst, it was eventually reduced down to something brief but telling that was a satisfying compromise.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_br2.png" alt="Height Choice">
+                        <div class="galleryTextBox">
+                            <p>As well as cutting down the breadth of choices to avoid trapping the player in a never-ending customization spiral, I also wanted to afford to opportunity to set variables without necessarily explicitly telling the player "THIS WILL SET A VARIABLE". I feel like it slows down the pacing to constantly and directly setting variable after variable after variable, so I experimented with letting them set things through interaction with the world.</p>
+                            <p>This choice sets the height of the player based on how easily they are able to reach a street sign, having gotten up from where they were sitting and absently reaching for it (or simply seeing it) as they walk by to continue their shift-patrol.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_br3.png" alt="Customized Next">
+                        <div class="galleryTextBox">
+                            <p>Something I started doing just on the cutting edge of "inconveniently late" into the development process of <i>Bad Ritual</i> was customizing the <i>next</i> button. I found it cleaned up my actual story code, as it allowed me to cut a few transistional lines from the actual meat of the narrative and set the pace a bit snappier.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_br4.png" alt="Excerpt">
+                        <div class="galleryTextBox">
+                            <p>This shot is an excerpt from a purely narrative portion, unaffected by stats or choices the player made. In this passage, after having put on the bracelet (unbeknownst to the player, the actual artifact of an archdemon), the player experiences the searing pain of being bound.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="pGallery">
+                    <div class="galleryContent">
+                        <div id="pclose" tabindex="1">X</div>
+                        <h1>Platforming Pro, 2019</h1>
+                        <div class="galleryTextBox">
+                            <p><i>Platforming Pro</i> is the working title of a platformer demo made for a project. I was on a team with two others, one of which handled web-coding exclusively and the other who did the level design and artwork. I was responsible for the creation and implementation of all menus, player stats, and most of the writing (save for a few weapon names/descriptions that appear on the website). Outside of strict responsibilities, I also cleaned and standardized our scripts (written by two separate people) and organized our file structure.<p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_p1.png" alt="Main Menu">
+                        <div class="galleryTextBox">
+                            <p>Occasionally I would find that a menu had been designed and partially implemented before I got to it (as my initial responsibility was the tutorial level and prologue, which you can see behind the main menu screen). The main menu was one of these instances, wherein an entire PlayerPrefs system had been built with a rudimentary stat system built before my involvement.</p>
+                            <p>Eventually it fell to me to correct the bugs in the system and to switch it from its own scene (which created issues when trying to move the player from scene to scene without destroying them) to be a part of my tutorial level. I fixed the PlayerPrefs by correcting what was reset and what was saved, and built the "continue" system from scratch (wherein a player can continue from the start of the last level they completed).</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_p2.png" alt="CC Menu">
+                        <div class="galleryTextBox">
+                            <p>The Character Creation Menu was built and designed entirely by me from the ground up. At the point in the game it appears, it is meant to set all intial stats and therefore I built it so that it must be taken through, menu by menu, in order to get into the first level.</p>
+                            <p>In the menu, the second character (Tahira) is unlocked; this is unusual and used for testing only, as Tahira would not be unlocked until the end of the fifth level. Besides that, all the necessary menus are scrollable (from right to left) and the inventory menu is locked until an equippable item is collected. In the top left, the stats of the player are displayed.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_p3.png" alt="Pause Menu">
+                        <div class="galleryTextBox">
+                            <p>The pause menu was built before my involvement, but underwent multiple modifications based on content we meant it to display and bugs that were introduced as the timing system became more sophisticated. The primary bug was its total lack of functionality partway through development for no discernable reason— the pause button would be clicked and the menu would come up, but the "resume button" we had previously implemented did nothing, the pause button did not unpause it, and it would not switch scenes.</p>
+                            <p>In the first stages of development there was a level-unlock menu we meant to be able to access from the pause. As implementation of this failed, I scrapped it and replaced it with the "Respite Scene" wherein the player could reset their player but not switch levels— the only way through was to beat the one you were on, or to continue from where you left off.</p>
+                            <p>Eventually I fixed the functionality of the pause menu's actual pause functionality, the opening and collapsing of the menu, and the design, functionality, and accessibility of the "Respite Scene".</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_p4.png" alt="Respite Scene">
+                        <div class="galleryTextBox">
+                            <p>The Respite Scene itself was meant to be easy, as it was merely the fullscreen Character Creation menu; however, as Unity proved to us, nothing is easy. There were issues with the character moving to and from the Respite that created player doubles, made the player completely immobile, or made the player immortal.</p>
+                            <p>To say that I knew exactly why any of this happened would be a wild exaggeration, but eventually I worked through it and the Respite Scene became wholly functional and visually acceptable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="rmGallery">
+                    <div class="galleryContent">
+                        <div id="rmclose" tabindex="1">X</div>
+                        <h1>Renaissance Man, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p><i>Renaissance Man</i> is a Javascript clicker game, where the object as a Renaissance Painter is to build your art empire, train your apprentice, and rake in a higher class of patrons. There are checkpoints that light up with famous paintings and a faint glow when you achieve them, a banner across the top that changes every few seconds, and gold frames to outline your stats and progress.</p>
+                            <p>This was built to be a responsive browser game, applying a new theme to the clicker genre.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_rm1.png" alt="Banner">
+                        <div class="galleryTextBox">
+                            <p>The banner is probably one of my favourite parts of this game, and took arguably the least amount of time to complete (making the Venn Diagram of "functionality I was fond of from the start" and "things that are easy" a circle). Every few seconds it switches to another slide of details from three different Renaissance paintings, the total slides being three and therefore including nine detail shots.</p>
+                            <p>Visible at the bottom there is also a "News Around Town" section, which accounts for random events that affect your supplies, apprentice (if purchased), income, and the price of supplies. It goes through an array of events, from your apprentice being struck by inspiration and producing double their regular output to dying of plague, that occur randomly every few seconds.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_rm2.png" alt="Legacy Stats">
+                        <div class="galleryTextBox">
+                            <p>The lower half of the page contains the not-immediately-relevant statistics and legacy bars. The legacy bar was particularly tricky to create visually— when you reach an absurdly high amount of paintings produced, the empty circle fills with a random painting and glows faintly golden.</p>
+                            <p>There was an issue with making the painting truly random, while simultaneously having the glow appear and not aversely affect the display as a whole. When resized, the bar disappears.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_rm3.png" alt="Full Game Menu">
+                        <div class="galleryTextBox">
+                            <p>This view is the ideal way to actually play the game, as it displays the pure game-features without the added aesthetics of the banner and the legacy menu. This shot also shows what it looks like when the apprentice has been hired; the option to hire another apprentice is removed, and instead changes to the option to mentor.</p>
+                            <p>Besides that, changes made have been to lower the price per painting (thus driving up patron demand), supply quantity dropping as paintings are made, and lifetime works counting up as paintings are completed. Not immediately obvious features are the fluxuation in supply price (every few seconds it recalculates a whole number value between 95gp and 105gp), the checkbox for supply delivery unlocking (allowing the player the automatically purchase), and the quality of patrons rising.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="bGallery">
+                    <div class="galleryContent">
+                        <div id="bclose" tabindex="1">X</div>
+                        <h1>The Bloodmoon, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p><i>The Bloodmoon</i> is a Java console game where the player must face the Bloodmoon, an annual event where the town of Diregulch is beset by monsters. The player, who is selected through their choice of occupation, was welcomed into the community on the condition that they would work to stop it when the time came.</p>
+                            <p>They hadn't believed it was real, until now.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_b1.png" alt="Character Select">
+                        <div class="galleryTextBox">
+                            <p>I wanted character selection to happen, but didn't want to overcomplicate things as it was my first Java game. I decided on a set of prebuilt characters with stats based on their occupations, but despite the tightness of the selection I didn't want to sacrifice character.</p>
+                            <p>Each class has a notable strength in stat distribution (farmer is strength, shopkeep is speed, and of course the bard is charisma), and one particular special power (farmer has a double damage blow, the shopkeep has a fireball spell, and the bard is able to heal).</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_b2.png" alt="Battle">
+                        <div class="galleryTextBox">
+                            <p>The battle system is fairly straightforward, turn based combat that displays the stats of everyone involved after a blow is struck. The enemy and weapon is randomly chosen, based on the encounter level.</p>
+                            <p>The special ability of the player can be used twice before it's locked out. Of this pool of two blows, one is also taken away every time a heavy strike is used. After two uses of either or one use of each, the player has no choice but to attack with regular strikes for the rest of the battle.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_b3.png" alt="Game of Chance">
+                        <div class="galleryTextBox">
+                            <p>In addition to battles, there's also encounters that the player interacts with while training. Time ran out before they could be randomized, but as it stands they rely on random rolled integers to determine success or failure, and can, if the player chooses, end in battle anyway.</p>
+                            <p>Weapons and stat increases can be won or lost, ultimately either preparing you or hindering your progress in the final battle.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_b4.png" alt="Random Encounter">
+                        <div class="galleryTextBox">
+                            <p>This is an encounter from about mid-game, wherein the player can choose to help a goblin kill its partner in crime, kill both the goblin and its bandit partner, or betray the goblin.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="mhGallery">
+                    <div class="galleryContent">
+                        <div id="mhclose" tabindex="1">X</div>
+                        <h1>Manor Hill, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p><i>Manor Hill</i> was made with Ren'py engine, and one of my largest-scale projects to date. I handled sound editing (before sound was cut for time), writing, programming, and hiring artists for the sprites. In it, the player is a customizable (although non-visual) entity, who attends an annual Harvest Festival in their minor country, Uresa.</p>
+                            <p>This year, however, proves to be different; in the midst of the festivities, the lights explode and the player is knocked unconscious. When they wake up, they're trapped in the mansion with only a single companion for company. All the remains is questions: why are you here, how do you leave, and what does your companion know?</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_mh1.png" alt="Main Menu">
+                        <div class="galleryTextBox">
+                            <p>Design assets were kindly gifted to me by my good friend and one of the artists on the projects, <a href="http://leylamamedova.com">Leyla Mamedova</a>. It's helped immensely in giving <i>Manor Hill</i> a more cohesive design than public domain assets had before.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_mh2.png" alt="CH 2 Splash">
+                        <div class="galleryTextBox">
+                            <p>Splashscreens were added as part of the push to .apk, to allow Chromebook users (and subsequently Android users with larger screens) to play the game after it became an executable instead of an HTML page.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_mh3.png" alt="Gnarl Character Sprite">
+                        <div class="galleryTextBox">
+                            <p>Gnarl is the first character the player meets, and occupies the role of childhood best friend and local con-artist. In the scene pictured, the player and Gnarl enter a roped-off section of the manor during the party to dig through the bedrooms.</p>
+                            <p>Most of Gnarl's route depends on the player luck stat. It's built up as the player wins and loses random rolls, and determines the direction the narrative goes in.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_mh4.png" alt="Valerian Character Sprite">
+                        <div class="galleryTextBox">
+                            <p>Valerian is one of the two companions the player can meet for the first time at the Harvest Festivsal. The head of an organizaed crime division in the country to the east of Uresa, Valerian is in town for the Festival. In the scene pictured, the player and Valerian are trying to decide where to look for an exit to the manor.</p>
+                            <p>Valerian's route depends mostly on the friend/rival scale. Certain responses and decisions will built up either Valerian's fondness for the player as a friend or his respect for them as a rival, which will then adjust how he reacts to them.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="entGallery">
+                    <div class="galleryContent">
+                        <div id="entclose" tabindex="1">X</div>
+                        <h1>The Entomologist, 2017</h1>
+                        <div class="galleryTextBox">
+                            <p>This was a minor character study, written in the early days of <i>Hybrid</i> when it was meant to be a published novel. The publishing fell through but I felt the short was a good character exploration to carry into its development as an interactive narrative.</p>
+                            <p>It follows Mantis, before she was a trick shot and back when she studied bugs, hoping to bring back the breadth of human knowledge one beetle at a time. Crave still works with animals here, but they're both working directly on behalf of the warlord Roach.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_ent1.png" alt="Excerpt of The Entomologist">
+                        <div class="galleryTextBox">
+                            <p>Crave has probably changed the most in development, both in image and accent. The speaking quirk was adjusted on feedback that it was difficult to follow on a large scale, and his image was changed to look more similar to Mantis.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_ent2.png" alt="Excerpt of The Entomologist">
+                        <div class="galleryTextBox">
+                            <p>One eternal constant in Mantis' story is how deeply and openly she hates Roach. Besides that she's remained largely consistent, besides losing her formal occupation when the camp turned to a drifter's haven instead of an abandoned campus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="seaGallery">
+                    <div class="galleryContent">
+                        <div id="seaclose" tabindex="1">X</div>
+                        <h1>The Seasons of the Bard, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p>Written as part of a larger roleplay campaign, Seasons of the Bard is a character study of the Ruciat and their stalwart friend Tynus, through the bard's music and the captain's outlandish lies about his life before his arrival in the wetlands.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_sea1.png" alt="Excerpt of Seasons of the Bard">
+                        <div class="galleryTextBox">
+                            <p>This snippet was meant to be a means of positing the bard in Cenham, as during the campaign they denied ever having settled in the place and urged others in the group not to mention them to the townsfolk.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_sea2.png" alt="Excerpt of Seasons of the Bard">
+                        <div class="galleryTextBox">
+                            <p>In addition to giving Ruciat roots in a singular location— an impression they worked hard to avoid within the group— it was also meant to demonstrate that when they lied and embellished their own history, it was a learned behaviour.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="rGallery">
+                    <div class="galleryContent">
+                        <div id="rclose" tabindex="1">X</div>
+                        <h1>With Love From Your Favourite Bard, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p>This was originally written as a prep document for a short campaign I ran. It goes over locations and people within the village, giving brief political context for the players and short lists of merchant wares, all written as if in a letter from Ruciat.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_r1.png" alt="Excerpt From With Love">
+                        <div class="galleryTextBox">
+                            <p>Ruciat (going by Rock in the campaign) mentions multiple times that the team should not mention them to the denizens of Cenham, to try and avoid having them find out that their father leads the town, and letting their sibling know where they've gone.</p>
+                            <p>Unsurprisingly, the party mentioned it to the first NPC they met.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_r2.png" alt="Exercept From With Love">
+                        <div class="galleryTextBox">
+                            <p>This was meant to give the players an idea of the sort of trouble they'd encounter while within Cenham. They were there to solve the murder of a Direport diplomat (Direport having been created by another player), whom most of the town denied having ever seen before in their lives.</p>
+                            <p>Most investigation had to be done either leveraging their passive knowledge of the town given to them by Ruciat (and in many cases, news on the bard passed as information as well) or by successfully intimidating or charming the townsfolk (neither of which happened very often).</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="gGallery">
+                    <div class="galleryContent">
+                        <div id="gclose" tabindex="1">X</div>
+                        <h1>The Gods of Aseron, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p><i>The Gods</i> were created as a lore-building document from which players in a broad campaign could build their character and help me to build the society that they come from.</p>
+                            <p>Unbeknownst to the players, several characters they met along the way were actually the mortals who pretended at godhood, in order to more easily subjugate the island.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_g1.png" alt="Descriptions of the gods Kasha and Narhu">
+                        <div class="galleryTextBox">
+                            <p>With Kasha, called Khargas, as their guide, the players set out on a journey to unite their island which had grown fractured between the different societies that occupied it. Narhu, his sister, was worshipped by the cleric of the group.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_g2.png" alt="Descriptions of the gods Raen and Ymen">
+                        <div class="galleryTextBox">
+                            <p>Each of the gods had picked one member of the team as a "chosen one", save for Raen (called Rhenne) who set off on his own journey to warn the team away from Khargas.</p>
+                            <p>Though most of the team chose to stay agnostic or disbelieve in the gods altogether, each of them had an assigned "patron" that they knew nothing of.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="vGallery">
+                    <div class="galleryContent">
+                        <div id="vclose" tabindex="1">X</div>
+                        <h1>The Vision, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p>This snippet was written and distributed to players in the Aseron campaign so that they could posit themself in the opening scene (the inn which Khargas summons them to) and give me their responses to having this dream.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_v1.png" alt="Excerpt from The Vision">
+                        <div class="galleryTextBox">
+                            <p>Khargas is meant to come off as both deeply knowledgeable and kind of a jerk. It's also implied that he is sending this vision to everyone at once, rather than bothering to visit one adventurer at a time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="poGallery">
+                    <div class="galleryContent">
+                        <div id="poclose" tabindex="1">X</div>
+                        <h1>Potion Bottle, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p>Made in Adobe Illustrator, the potion bottles were experiments with creating my own basic shape assets, and learning to use the various tools available through Illustrator.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_po1.svg" alt="Upright Potion Bottles">
+                        <div class="galleryTextBox">
+                            <p>I got into Illustrator immediately after learning Photoshop, expecting it to be much the same but finding that it wasn't even similar. The bottles were a good exercise, as it gave practice to my shaky skills with the bucket and shape tools.</p>
+                            <p>While they aren't line-perfect, especially on close inspection, I'm proud of how they look and for the purpose they served (as some ambient design for a map) they were more than sufficient.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="w1Gallery">
+                    <div class="galleryContent">
+                        <div id="w1close" tabindex="1">X</div>
+                        <h1>Portfolio Wireframe, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p>I primarily use Photoshop to create wireframes for websites, although I'm also able to use Adobe XD. This one was made with Photoshop and was the first draft (out of three) for my own personal portfolio.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_w1.png" alt="Personal Portfolio Wireframe">
+                        <div class="galleryTextBox">
+                            <p>The first draft of the portfolio was for a project, which I planned in advance to use Javascript animations to show and hide the content available. This ended up being scrapped after the first draft as it was fairly redundant considering the layout necessitating that it be shown by default.</p>
+                            <p>The contact page was also scrapped, only created in the first place as proof that I was capable of creating a contact form through code, and was replaced by an email button in the upper right corner.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="w2Gallery">
+                    <div class="galleryContent">
+                        <div id="w2close" tabindex="1">X</div>
+                        <h1>Artist Website Wireframe, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p>This was a website never created, but made specifically for the wireframe (again, in Photoshop).</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_w2.png" alt="Artist Website Wireframe">
+                        <div class="galleryTextBox">
+                            <p>I used artist assets from <a href="http://leylamamedova.com">Leyla Mamedova</a>, creating a simple symmetrical layout using information from an older version of her portfolio.</p>
+                            <p>I did handpick specific pieces rather than create a large scale portfolio that displayed all of her work. This was created more along the lines of a public website.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="amGallery">
+                    <div class="galleryContent">
+                        <div id="amclose" tabindex="1">X</div>
+                        <h1>Aseron Moth, 2018</h1>
+                        <div class="galleryTextBox">
+                            <p>After getting more comfortable with Illustrator's tools, I wanted to try something that would involve more complicated shapes and demonstrate more success in creating partial shapes.</p>
+                        </div>
+                        <img src="assets/images/thumbnails/content/content_am.svg" alt="The Aseron Moth">
+                        <div class="galleryTextBox">
+                            <p>I originally meant to leave off colour altogether, as the colour tools were more confusing to me as an inexperienced user, but I found the idea of gradient wings— despite the simplicity of the design as a whole— too appealing to not attempt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fsGallery">
+                    <div class="galleryContent">
+                        <div id="fsclose" tabindex="1">X</div>
+                        <h1>Falling Stars, 2019</h1>
+                        <div class="galleryTextBox">
+                            <p>Made with Javascript, <i>Falling Stars</i> was the first code-based animation I'd ever done outside of CSS (not including jQuery animations for site function).</p>
+                        </div>
+                        <video autoplay controls>
+                            <source src="assets/videos/fallingStars.mp4" type="video/mp4">
+                        </video>
+                        <div class="galleryTextBox">
+                            <p>Despite how simple the code for this project turned out, it didn't start so straightforward. I looked at the source code for multiple similar projects to try and put something together, also using canvas for the first time. It was an exercise in trying to marry the Javascript that I wanted to use with the canvas I wanted to learn.</p>
+                            <p>At first the "final" product was a refreshing starfield, which while I liked, I ultimately decided against because it didn't look intentional to have the falling stars continue to refresh to a different position. The final touches on the animation then included modifying the code only slightly to have them continuously fall.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="ptGallery">
+                    <div class="galleryContent">
+                        <div id="ptclose" tabindex="1">X</div>
+                        <h1>Centre of the Universe, 2019</h1>
+                        <div class="galleryTextBox">
+                            <p>Made with Javascript and the Three.js library, <i>Centre of the Universe</i> was truly jumping into the deep end of coding and learning to swim from there. I'd never even heard of the Three.js library (having little to no experience with animations at this point), but knew that I wanted one of the batch of three animations to be 3D.</p>
+                            <p>There was a steep learning curve involved in this process, and while there's a wealth of useful tutorials, some problems are too specific to easily research away. This was the case several times throughout the project, which necessitated trial and error. The source of the objects, textures, and materials in the scene can be found <a href="https://opengameart.org/content/low-poly-space-assets">here</a>.</p>
+                        </div>
+                        <video autoplay controls>
+                            <source src="assets/videos/planetTurn.mp4" type="video/mp4">
+                        </video>
+                        <div class="galleryTextBox">
+                            <p>There is a bug associated with this project that I haven't quite been able to discover the solution to. The textures are bugged; in the accompanying video, you can see that both the planet and its moon have different textures. This is achieved roughly 1/3rd of the time, depending on what browser is being used. It began with a permissions error that existed in the major browsers tested (Chrome, Firefox, Edge, and IE).</p>
+                            <p>This permissions error required me to run the site that the animation was embedded into through a local host service (in this case, <a href="https://github.com/greggman/servez">Servez</a>, though the bug is not necessarily specifically the fault of this program; node.js was also tested, and returned less frequent successful loads than Servez was able to). To keep it brief, the order in which the local hosts handles the permission requests vs loads the objects in the scene has a damaging effect on the displayed textures. Usually, both objects will load with the same texture.</p>
+                            <p>Still, although the bug doesn't have a simple fix, I learned a wealth of things while I fussed around with the code. I've managed texture in both Blender and through pure MTL code, I worked with promises for the first time, I restructured the code just under a million times, and I did a boat load of research every time something came up that needed fixing (even if it couldn't be fixed).</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="srsGallery">
+                    <div class="galleryContent">
+                        <div id="srsclose" tabindex="1">X</div>
+                        <h1>Sunrise/set, 2019</h1>
+                        <div class="galleryTextBox">
+                            <p>Made with CSS animations, Sunrise/set was meant to be a relief from the arduous process of coding the other two; I knew the rotation would be fairly simple once I worked out where everything went, and I wanted to refresh my Photoshop skills.</p>
+                        </div>
+                        <video autoplay controls>
+                            <source src="assets/videos/sunrise_set.mp4" type="video/mp4">
+                        </video>
+                        <div class="galleryTextBox">
+                            <p>The most involved part of thise code was positioning everything within the box, allowing it to realistically turn while also keeping everything in its place. Thankfully, CSS isn't as much of a struggle as JS Libraries can be: this was done fairly quickly and I could dedicate the rest of the deadline to creating a background.</p>
+                            <p>It's far from perfect, but I'm not a visual artist; it didn't really have to be, so long as it conveyed what I wanted it to (broadly, changes in light). <a href="https://www.freepik.com/?__hstc=57440181.c0fb36b492b3475b3edd96c71cb22aa9.1556630755750.1556634830586.1557154018788.3&__hssc=57440181.2.1557154018788&__hsfp=3480364987">Credit</a> for the sun and the moon.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DOM -->
+                <div id="statement">
+                    <div class="statementBox">
+                        <p>While I'm always down for a good symbol or simile, it's important to me to set clarity goals in every medium. My foremost concern is technical prowess, and the ease with which any program, piece of writing, or minor design element is consumed.</p>
+                        <p>With regards to writing, besides being easy to understand I also strive to make the narrative feel familiar. I've received praise for the dialogue on multiple projects, specifically how naturally it flows and how it helps the reader relate to and care about the characters.</p>
+                    </div>
+                </div>
+                <div id="games">
+                    <h1>Games</h1>
+                    <div class="aviewBox">
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_hybrid.png" id="hybrid" alt="Hybrid" tabindex="1">
+                            <div class="caption">Hybrid</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_badritual.png" alt="Bad Ritual" id="badritual" tabindex="1">
+                            <div class="caption">Bad Ritual</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_platformer.png" alt="Platforming Pro" id="platformer" tabindex="1">
+                            <div class="caption">Platforming Pro</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_renaissance.png" alt="Renaissance Man" id="renaissance" tabindex="1">
+                            <div class="caption">Renaissance Man</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_bloodmoon.png" alt="The Bloodmoon" id="bloodmoon" tabindex="1">
+                            <div class="caption">The Bloodmoon</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_manor.png" alt="Manor Hill" id="manorhill" tabindex="1">
+                            <div class="caption">Manor Hill</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="writing">
+                    <h1>Writing</h1>
+                    <div class="aviewBox">
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_writ1.png" alt="The Entomologist" id="entomologist" tabindex="1">
+                            <div class="caption">The Entomologist</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_writ2.png" alt="Season of the Bard" id="seasons" tabindex="1">
+                            <div class="caption">Seasons of the Bard</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_writ3.png" alt="With Love, Rock" id="rock" tabindex="1">
+                            <div class="caption">With Love, Rock</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_writ1.png" alt="The Gods of Aseron" id="gods" tabindex="1">
+                            <div class="caption">The Gods of Aseron</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_writ2.png" alt="The Vision" id="vision" tabindex="1">
+                            <div class="caption">The Vision</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="design">
+                    <h1>Design</h1>
+                    <div class="aviewBox">
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/content/content_po1.svg" alt="Potion" id="potion" tabindex="1">
+                            <div class="caption">Potion Bottle</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_wireframe1.png" alt="Portfolio Wireframe 1" id="w1" tabindex="1">
+                            <div class="caption">Portfolio Wireframe</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_wireframe2.png" alt="Portfolio Wireframe 2" id="w2" tabindex="1">
+                            <div class="caption">Artist Wireframe</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/content/content_am.svg" alt="The Aseron Moth" id="am" tabindex="1">
+                            <div class="caption">The Aseron Moth</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="animation">
+                    <h1>Animation</h1>
+                    <div class="aviewBox">
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_fs.png" alt="Falling Stars" id="fs" tabindex="1">
+                            <div class="caption">Falling Stars</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_pt.png" alt="Centre of the Universe" id="pt" tabindex="1">
+                            <div class="caption">Centre of the Universe</div>
+                        </div>
+                        <div class="codeWrap">
+                            <img src="assets/images/thumbnails/icons/icon_srs.png" alt="Sunrise/set" id="srs" tabindex="1">
+                            <div class="caption">Sunrise/set</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer tabindex="1">&copy; Marti Toonen, Updated: March 2019</footer>
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/app.js"></script>
+    </div>
+</body>
+</html>

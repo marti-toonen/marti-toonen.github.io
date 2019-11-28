@@ -1,0 +1,440 @@
+/* Universal Elements */
+
+body {
+    width: 90%;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgba(230,230,230,1) 0%, rgba(222,222,222,1) 4%, rgba(242,242,242,1) 13%, rgba(255,255,255,1) 100%);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6em;
+}
+    h1 {
+        margin-left: 3%;
+        font-family: 'Raleway', sans-serif;
+        outline: none;
+    }
+    h3 {
+        color: #516e37;
+    }
+    p {
+        text-align: justify;
+    }
+
+/* Grids */
+
+#mainGrid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(30px, auto);
+    grid-template-areas:
+        "hdr hdr hdr hdr hdr hdr hdr"
+        "hdr hdr hdr hdr hdr hdr hdr"
+        "hdr hdr hdr hdr hdr hdr hdr"
+        "hdr hdr hdr hdr hdr hdr hdr"
+        "hdr hdr hdr hdr hdr hdr hdr"
+        "nav nav nav nav nav nav nav"
+        "mai mai mai mai mai mai mai"
+        "mai mai mai mai mai mai mai"
+        "mai mai mai mai mai mai mai"
+        "mai mai mai mai mai mai mai"
+        "mai mai mai mai mai mai mai"
+        "ftr ftr ftr ftr ftr ftr ftr";
+}
+
+/* Persistent Divs */
+
+header {
+    display: grid;
+    width: 100%;
+    grid-area: hdr;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    grid-template-areas:
+        "soc soc soc soc soc soc soc"
+        "log  .   .   .   .   .   . ";
+    background: url('../assets/images/interface/header.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+    #logo {
+        width: 140px;
+        height: 140px;
+        grid-area: log;
+        border: 1px solid #000;
+        border-radius: 50%;
+        margin-left: 60px;
+        margin-top: 80px;
+        position: absolute;
+        z-index: 15;
+        background: url('../assets/images/interface/logo.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    #social {
+        width: 100%;
+        grid-area: soc;
+        text-align: right;
+    }
+        .social {
+            width: 40px;
+            height: 40px;
+            margin: 1%;
+            border: 1px solid #000;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .social:hover {
+            background: #d3e0bf;
+        }
+
+nav {
+    grid-area: nav;
+    width: calc(100% - 20px);
+    height: 10px;
+    padding: 10px;
+    text-align: right;
+}
+    #right {
+        width: 100%;
+        grid-area: rig;
+        text-align: right;
+    }
+    nav a {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.3em;
+        color: #000;
+        text-decoration: none;
+        padding: 10px 23px;
+    }
+#mobileNav {
+    display: none;
+}
+    #navLinks {
+        display: none;
+    }
+
+main {
+    width: 100%;
+    min-height: 400px;
+    grid-area: mai;
+}
+footer {
+    width: calc(100% - 2px);
+    padding: 10px 0;
+    grid-area: ftr;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9em;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+/* Index Page */
+
+.textBox, .statementBox {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 3%;
+    min-height: 120px;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+/* Gallery Page */
+
+#galleryGrid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-areas:
+        " .   .   .   .   .   .   . "
+        "sta sta sta sta sta sta sta"
+        "sta sta sta sta sta sta sta"
+        "gme gme gme gme gme gme gme"
+        "gme gme gme gme gme gme gme"
+        "wrt wrt wrt wrt wrt wrt wrt"
+        "wrt wrt wrt wrt wrt wrt wrt"
+        "des des des des des des des"
+        "des des des des des des des"
+        "ani ani ani ani ani ani ani"
+        "ani ani ani ani ani ani ani";
+}
+    #altNav {
+        width: 100%;
+        grid-area: lef;
+        padding: 10px 0;
+        margin-top: -45px;
+        text-align: center;
+    }
+    #statement {
+        width: 100%;
+        grid-area: sta;
+    }
+    #games {
+        width: 100%;
+        grid-area: gme;
+    }
+    #writing {
+        width: 100%;
+        grid-area: wrt;
+    }
+    #design {
+        width: 100%;
+        grid-area: des;
+    }
+    #animation {
+        width: 100%;
+        grid-area: ani;
+    }
+
+.aviewBox {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 200px;
+    position: relative;
+    z-index: 9;
+    justify-content: center;
+}
+    .aviewBox img {
+        height: 120px;
+        width: 120px;
+        border: solid #000 1px;
+        opacity: 0.5;
+        margin: 20px 17px 35px 17px;
+        -webkit-transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+        -o-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .aviewBox img:hover {
+        opacity: 1;
+    }
+.codeWrap {
+    width: 160px;
+    min-height: 190px;
+    margin-bottom: 20px;
+}
+    .caption {
+        width: 120px;
+        height: 30px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-size: 0.8em;
+    }
+
+#hGallery, #brGallery, #pGallery, #rmGallery, #bGallery, #mhGallery {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    position: fixed;
+    z-index: 20;
+}
+#entGallery, #seaGallery, #rGallery, #gGallery, #vGallery {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    position: fixed;
+    z-index: 20;
+}
+#poGallery, #w1Gallery, #w2Gallery, #amGallery {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    position: fixed;
+    z-index: 20;
+}
+#fsGallery, #ptGallery, #srsGallery {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    position: fixed;
+    z-index: 20;
+}
+
+#hGallery.open, #brGallery.open, #pGallery.open, #rmGallery.open, #bGallery.open, #mhGallery.open {
+    display: block;
+}
+#entGallery.open, #seaGallery.open, #rGallery.open, #gGallery.open, #vGallery.open {
+    display: block;
+}
+#poGallery.open, #w1Gallery.open, #w2Gallery.open, #amGallery.open {
+    display: block;
+}
+#fsGallery.open, #ptGallery.open, #srsGallery.open {
+    display: block;
+}
+
+#hclose, #brclose, #pclose, #rmclose, #bclose, #mhclose {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    height: 20px;
+    width: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.7em;
+    padding-bottom: 3px;
+}
+#entclose, #seaclose, #rclose, #gclose, #vclose {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    height: 20px;
+    width: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.7em;
+    padding-bottom: 3px;
+}
+#poclose, #w1close, #w2close, #amclose {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    height: 20px;
+    width: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.7em;
+    padding-bottom: 3px;
+}
+#fsclose, #ptclose, #srsclose {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    height: 20px;
+    width: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.7em;
+    padding-bottom: 3px;
+}
+    .galleryContent {
+        width: 70%;
+        height: 460px;
+        left: 13%;
+        top: 50%;
+        margin: 0 auto;
+        margin-top: -250px;
+        padding: 20px;
+        border-radius: 3px;
+        position: fixed;
+        z-index: 25;
+        overflow-x: hidden;
+        background: #fff;
+    }
+        .galleryContent img {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .galleryTextBox {
+            width: 95%;
+            margin: 0 auto;
+            min-height: 50px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .galleryContent img:focus {
+            outline: solid 1px #000;
+        }
+
+video {
+    width: 100%;
+    max-height: 300px;
+}
+
+/* Resume Page */
+
+.bigWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+    .jobWrapper {
+        width: calc(50% - 60px);
+        min-height: 100px;
+        padding: 20px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+        .headingBanner {
+            width: calc(100% - 60px);
+            min-height: 30px;
+            padding: 5px 0;
+            margin-left: -6%;
+            }
+        .jobRoleText {
+            width: 100%;
+            min-height: 50px;
+            float: left;
+        }
+
+/* Media Queries */
+
+@media screen and (max-width: 930px) {
+    .jobWrapper {
+        display: block;
+        width: calc(100% - 60px);
+    }
+}
+@media screen and (max-width: 700px) {
+    #logo {
+        display: none;
+    }
+    nav {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 650px) {
+    .galleryContent {
+        left: 13%;
+    }
+        .galleryContent img {
+            display: none;
+        }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    #mainGrid {
+        display: block;
+    }
+    header {
+        height: 150px;
+    }
+    .textBox {
+        width: 70%;
+        margin: 3% 15% 10% 15%;
+        text-align: left;
+    }
+    .statementBox {
+        margin: 7% 15%;
+    }
+}
