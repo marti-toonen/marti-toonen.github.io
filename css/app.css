@@ -132,35 +132,6 @@ footer {
 
 /* Index Page */
 
-.textBox, .statementBox {
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 3%;
-    min-height: 120px;
-    font-size: 0.95em;
-    line-height: 1.6;
-}
-
-/* Gallery Page */
-
-#galleryGrid {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(7, 1fr);
-    grid-auto-rows: minmax(50px, auto);
-    grid-template-areas:
-        " .   .   .   .   .   .   . "
-        "sta sta sta sta sta sta sta"
-        "sta sta sta sta sta sta sta"
-        "gme gme gme gme gme gme gme"
-        "gme gme gme gme gme gme gme"
-        "wrt wrt wrt wrt wrt wrt wrt"
-        "wrt wrt wrt wrt wrt wrt wrt"
-        "des des des des des des des"
-        "des des des des des des des"
-        "ani ani ani ani ani ani ani"
-        "ani ani ani ani ani ani ani";
-}
     #altNav {
         width: 100%;
         grid-area: lef;
@@ -168,207 +139,15 @@ footer {
         margin-top: -45px;
         text-align: center;
     }
-    #statement {
-        width: 100%;
-        grid-area: sta;
-    }
-    #games {
-        width: 100%;
-        grid-area: gme;
-    }
-    #writing {
-        width: 100%;
-        grid-area: wrt;
-    }
-    #design {
-        width: 100%;
-        grid-area: des;
-    }
-    #animation {
-        width: 100%;
-        grid-area: ani;
-    }
 
-.aviewBox {
-    display: inline-flex;
-    flex-wrap: wrap;
-    width: 100%;
-    min-height: 200px;
-    position: relative;
-    z-index: 9;
-    justify-content: center;
-}
-    .aviewBox img {
-        height: 120px;
-        width: 120px;
-        border: solid #000 1px;
-        opacity: 0.5;
-        margin: 20px 17px 35px 17px;
-        -webkit-transition: opacity 0.3s ease-in-out;
-        -moz-transition: opacity 0.3s ease-in-out;
-        -ms-transition: opacity 0.3s ease-in-out;
-        -o-transition: opacity 0.3s ease-in-out;
-        transition: opacity 0.3s ease-in-out;
-    }
-    .aviewBox img:hover {
-        opacity: 1;
-    }
-.codeWrap {
-    width: 160px;
-    min-height: 190px;
-    margin-bottom: 20px;
-}
-    .caption {
-        width: 120px;
-        height: 30px;
-        margin: 0 auto;
-        text-align: center;
-        font-family: 'Raleway', sans-serif;
-        font-size: 0.8em;
-    }
+/* Gallery Page */
 
-#hGallery, #brGallery, #pGallery, #rmGallery, #bGallery, #mhGallery {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: none;
-    position: fixed;
-    z-index: 20;
-}
-#entGallery, #seaGallery, #rGallery, #gGallery, #vGallery {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: none;
-    position: fixed;
-    z-index: 20;
-}
-#poGallery, #w1Gallery, #w2Gallery, #amGallery {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: none;
-    position: fixed;
-    z-index: 20;
-}
-#fsGallery, #ptGallery, #srsGallery {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: none;
-    position: fixed;
-    z-index: 20;
+#gallery_table {
+    margin-bottom: 50px;
 }
 
-#hGallery.open, #brGallery.open, #pGallery.open, #rmGallery.open, #bGallery.open, #mhGallery.open {
-    display: block;
-}
-#entGallery.open, #seaGallery.open, #rGallery.open, #gGallery.open, #vGallery.open {
-    display: block;
-}
-#poGallery.open, #w1Gallery.open, #w2Gallery.open, #amGallery.open {
-    display: block;
-}
-#fsGallery.open, #ptGallery.open, #srsGallery.open {
-    display: block;
-}
-
-#hclose, #brclose, #pclose, #rmclose, #bclose, #mhclose {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    height: 20px;
-    width: 20px;
-    border-radius: 15px;
-    text-align: center;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 0.7em;
-    padding-bottom: 3px;
-}
-#entclose, #seaclose, #rclose, #gclose, #vclose {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    height: 20px;
-    width: 20px;
-    border-radius: 15px;
-    text-align: center;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 0.7em;
-    padding-bottom: 3px;
-}
-#poclose, #w1close, #w2close, #amclose {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    height: 20px;
-    width: 20px;
-    border-radius: 15px;
-    text-align: center;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 0.7em;
-    padding-bottom: 3px;
-}
-#fsclose, #ptclose, #srsclose {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    height: 20px;
-    width: 20px;
-    border-radius: 15px;
-    text-align: center;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 0.7em;
-    padding-bottom: 3px;
-}
-    .galleryContent {
-        width: 70%;
-        height: 460px;
-        left: 13%;
-        top: 50%;
-        margin: 0 auto;
-        margin-top: -250px;
-        padding: 20px;
-        border-radius: 3px;
-        position: fixed;
-        z-index: 25;
-        overflow-x: hidden;
-        background: #fff;
-    }
-        .galleryContent img {
-            width: 100%;
-            margin: 20px 0;
-        }
-        .galleryTextBox {
-            width: 95%;
-            margin: 0 auto;
-            min-height: 50px;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-        .galleryContent img:focus {
-            outline: solid 1px #000;
-        }
-
-video {
-    width: 100%;
-    max-height: 300px;
+td>p {
+    margin: 0 0 0 50px;
 }
 
 /* Resume Page */
@@ -413,14 +192,6 @@ video {
     nav {
         text-align: center;
     }
-}
-@media screen and (max-width: 650px) {
-    .galleryContent {
-        left: 13%;
-    }
-        .galleryContent img {
-            display: none;
-        }
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     #mainGrid {
