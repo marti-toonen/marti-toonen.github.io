@@ -12,32 +12,97 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-    <div id="mainGrid">
-        <header>
-            <div id="logo"></div>
-            <div id="social">
-                <a href="https://twitter.com/martimc_fly" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/twitter.png" alt="Twitter" tabindex="1"></a>
-                <a href="https://itch.io" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/itchio.png" alt="Itch.io" tabindex="1"></a>
-                <a href="mailto:martitoonen@gmail.com" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/email.png" alt="Email" tabindex="1"></a>
-            </div>
-        </header>
-        <nav>
-            <a href="" tabindex="1">home</a>
-            <a href="gallery.html" tabindex="1">gallery</a>
-            <a href="resume.html" tabindex="1">resume</a>
-        </nav>
-        <main>
-            <br><br>
-            <div class="textBox">
-                <div class="pi">Marti Toonen (b. 1995) has a BA Honours in Professional Writing (Book Stream) from York University, and is currently in Enterprise Web and Mobile Development at triOS College, London Campus.</div>
+    <header>
+        <div id="logo"></div>
+        <div id="social">
+            <a href="https://itch.io" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/itchio.png" alt="Itch.io" tabindex="1"></a>
+            <a href="mailto:martitoonen@gmail.com" target="_blank" tabindex="-1"><img class="social" src="assets/images/social/email.png" alt="Email" tabindex="1"></a>
+        </div>
+    </header>
+    <main>
+        <div class="box_one">
+            <br>
+            <div class="textbox">
+                <div class="pi">Marti Toonen (b. 1995) has a BA Honours in Professional Writing (Book Stream) from York University, and a degree in Enterprise Web & Mobile Development from triOS College (London Campus).</div>
                 <p>I'm an indie game developer who is passionate about interactive storytelling, and the challenge of telling a story in collaboration with a player. Being the only developer on several independent projects has honed my skills in narrative design, coding, sound editing, and very quietly seething as not to disturb those around me.</p>
                 <p>My hobbies include cooking, loving dogs, and changing the font on my website like I'm trying to set a record.</p>
-                <p>You've found my page CURRENTLY UNDER CONSTRUCTION— sorry about the mess!</p>
             </div>
-        </main>
-        <footer tabindex="1">&copy; Marti Toonen, Updated: November 2019</footer>
-        <script src="scripts/jquery.min.js"></script>
-        <script src="scripts/app.js"></script>
-    </div>
+        </div>
+        <div class="box_two">
+            <br><h1 style="margin-top: -10px;">Game Development Projects</h1><br>
+            <h2><a href="https://twitter.com/lovestruckgame">Lovestruck</a></h2>
+            <div class="textbox">
+                <p>I'm a writer for the Voltage app <i>Lovestruck,</i> having written Milo Starlash in <i>Enchanted Nights.</i></p>
+                <p>I take a plot document and story bible, and use them to create scripts on a two week turnaround. I take edits from production and implement them, frequently in a day or less.</p>
+            </div>
+        </div>
+        <div class="box_one">
+            <h2><a href="https://heartforge.itch.io/bad-ritual">Bad Ritual</a></h2>
+            <div class="textbox">
+                <p><i>Bad Ritual</i> is a text adventure game built with Twine Harlowe (including CSS, HTML, and Javascript).</p>
+                <p>Play as a street agent whose job is to wrangle the Infernal— various species of supernatural creatures that prowl the streets of Sanctum City— for the prestigous SignetWorks corporation. You have no love for your job, as a minimum wage hazard worker: still, your immediate supervisor, Tahira, is supportive and money is money, until one night when you're called back into the office to babysit an ancient demonic artifact.</p>
+                <p>Things go terribly wrong and you end the night bound to an ancient archdemon called Siruud the Devourer. Now you're faced with a choice: Siruud wants you to help him find out why he was brought to SignetWorks, while Tahira wants your help to contain a potentially violent threat to Sanctum City.</p>
+                <p>In a city where everyone has a secret, you have to decide how you want to unbind yourself from Siruud, but watch out: SignetWorks is always watching.</p>
+            </div>
+            <div class="gallery">
+                <img class="thumbnail" src="assets/images/thumbnails/content/br2.png" alt="Bad Ritual Story Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/br3.png" alt="Bad Ritual Story Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/br6.png" alt="Bad Ritual Story Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/br5.png" alt="Bad Ritual Achievement Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/br7.png" alt="Bad Ritual Character Stats Screenshot">
+                <div id="modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modal_image">
+                </div>
+            </div>
+        </div>
+        <div class="box_two">
+            <h2><a href="https://heartforge.itch.io/manor-hill">Manor Hill</a></h2>
+            <div class="textbox">
+                <p><i>Manor Hill</i> is a partial visual novel built with Ren'py (including Python).</p>
+                <p>You're a community staple of your native Uresa, and every year you attend the Harvest Festival held in the manor on the hill. Every other year you've gotten a little tipsy and headed home, but this year is a little different. The party is packed with the elite from all over the continent, but while you get swept up in the party, something insidious is happening behind the scenes.</p>
+                <p>After a violent disruption to the festival, you wake up alongside one of the partygoers: Abeni, the Commander of the Fleet; Valerian, a mob boss from a nighbouring country; or Gnarl, your best friend and local con artist. You quickly realise that not only have the party guests disappeared and left you totally alone, but there's no way out. You're trapped in the manor on the hill, and either no one on the outside knows or cares.</p>
+                <p>Get to the bottom of why you were locked away, and find a way out. Can you trust your partner? And if you can't, what hope do you have?</p>
+            </div>
+            <div class="gallery">
+                <img class="thumbnail" src="assets/images/thumbnails/content/mh5.png" alt="Manor Hill Splash Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/mh1.png" alt="Manor Hill Valerian Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/mh2.png" alt="Manor Hill Abeni Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/mh3.png" alt="Manor Hill Gnarl Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/mh4.png" alt="Manor Hill Valerian Screenshot">
+            </div>
+        </div>
+        <div class="box_one">
+            <h2><a href="https://heartforge.itch.io/hybrid">Hybrid</a></h2>
+            <div class="textbox">
+                <p><i>Hybrid</i> is a text adventure game built with Twine Harlowe (including CSS, HTML, and Javascript).</p>
+                <p>Civilization has crumbled, but not in the way that anyone expected. The earth rose up, and in an impossible act of rapid evolution, destroyed the monuments of human society. This, however, doesn't affect you at all: your name is Zed, and you've lived in this fractured world your whole life. You and your last remaining family member have a farm, a home, and even a radio tower. You've never seen another person, but you hardly need to.</p>
+                <p>When your farm is ravaged by strange-looking scavengers, with your family nowhere to be found, you'll be forced to set out into the wild to find them. On the way, you'll stumble upon an outpost with even stranger strangers, and be confronted by a question that you've never had to consider before.</p>
+                <p>How far are you willing to go to preserve humanity?</p>
+            </div>
+            <div class="gallery">
+                <img class="thumbnail" src="assets/images/thumbnails/content/h5.png" alt="Hybrid Story Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/h1.png" alt="Hybrid Story Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/h2.png" alt="Hybrid Story Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/h3.png" alt="Hybrid Story Screenshot">
+                <img class="thumbnail" src="assets/images/thumbnails/content/h4.png" alt="Hybrid Story Screenshot">
+            </div>
+        </div>
+        <div class="box_two">
+            <br><h1 style="margin-top: -10px;">Web Development Projects</h1><br>
+            <h2><a href="https://keplershipyards.com/">Kepler Shipyards</a></h2>
+            <div class="textbox">
+                <p>Made in thirty-five hours, this website was created to finish up an internship obligation. Using resources provided by the company, I reformatted and designed their entire website using HTML and CSS. I made use of free to use assets and images in order to provide placeholders for future development.</p>
+            </div>
+            <div class="gallery">
+                <img class="thumbnail" src="assets/images/thumbnails/content/ksy1.png" alt="Kepler Shipyards Home">
+                <img class="thumbnail" src="assets/images/thumbnails/content/ksy2.png" alt="Kepler Shipyards Aquaponics">
+                <img class="thumbnail" src="assets/images/thumbnails/content/ksy3.png" alt="Kepler Shipyards Space Suits">
+                <img class="thumbnail" src="assets/images/thumbnails/content/ksy4.png" alt="Kepler Shipyards Home">
+            </div>
+    </main>
+    <footer tabindex="1">&copy; Marti Toonen, Updated: June 2020</footer>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>
