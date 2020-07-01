@@ -27,9 +27,6 @@ body {
     h3 {
         color: #516e37;
     }
-    p {
-        text-align: justify;
-    }
 
 /* Persistent Divs */
 
@@ -71,7 +68,16 @@ header {
         .social:hover {
             background: #d3e0bf;
         }
-
+    .socialbutton {
+        width: 200px;
+        height: 50px;
+        background: #fff;
+        font-family: 'Montserrat', sans-serif;
+        margin: 30px;
+        outline: none;
+        border: solid 1px #000;
+        cursor: pointer;
+    }
 main {
     width: 100%;
     min-height: 500px;
@@ -183,41 +189,25 @@ footer {
 
 /* Media Queries */
 
-@media screen and (max-width: 930px) {
-    .jobWrapper {
-        display: block;
-        width: calc(100% - 60px);
-    }
-}
 @media screen and (max-width: 700px) {
-    #logo {
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-content: center;
+    }
+        #logo {
+            margin: 0;
+        }
+    #social {
         display: none;
     }
-    nav {
-        text-align: center;
+    .socialbutton {
+        margin: 10px;
     }
-}
-@media screen and (max-width: 650px) {
-    .galleryContent {
-        left: 13%;
-    }
-        .galleryContent img {
+    @media screen and (orientation: portrait) {
+        .gallery {
             display: none;
         }
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    #mainGrid {
-        display: block;
-    }
-    header {
-        height: 150px;
-    }
-    .textBox {
-        width: 70%;
-        margin: 3% 15% 10% 15%;
-        text-align: left;
-    }
-    .statementBox {
-        margin: 7% 15%;
     }
 }
