@@ -114,7 +114,7 @@ main {
             background-color: rgba(0, 0, 0, 0.9);
         }
             .modal-content {
-                margin: auto;
+                margin: 0 auto;
                 display: block;
                 width: 90%;
                 max-width: 1000px;
@@ -151,8 +151,8 @@ main {
                     cursor: pointer;
                 }
             #modal_image {
-                min-height: 500px;
-                max-height: 700px;
+                height: 70%;
+                width: 90%;
             }
 
 .textbox {
